@@ -1,11 +1,12 @@
 \ProvidesPackage{dvfu}
-\usepackage[margin=1cm,left=3cm,a4paper]{geometry}
+\usepackage[margin=2cm,left=3cm,a4paper]{geometry}
 \usepackage[T1,T2A]{fontenc}
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
 \usepackage{graphicx}
 \usepackage{multicol}
-%\usepackage{ifmtarg}
 
 \newcommand{\CourseName}{}
 \newcommand{\CourseAuthor}{}
@@ -85,19 +86,34 @@
 самостоятельная работа & \MaybeHours{\CourseHomework}\\
 реферативные работы & \CourseReferatsNumber\\
 контрольные работы & \CourseWorksNumber\\
+зачет & \if\relax\CoursePassfailSemester\relax\else\CoursePassfailSemester~семестр\fi\\
+экзамен & \if\relax\CourseExamSemester\relax\else \CourseExamSemester~семестр\fi\\
 \end{tabular}
-
-зачет\if\relax\CoursePassfailSemester\relax\else : \CoursePassfailSemester семестр\fi\\
-
-экзамен \if\relax\CourseExamSemester\relax\else : \CourseExamSemester семестр\fi\\
 
 Рабочая программа составлена в соответствии с требованиями федерального государственного образовательного стандарта высшего профессионального образования
 от 20 мая 2010 г. № 545 «Об утверждении и введении в действие ФГОС ВПО по направлению 010400 Прикладная математика и информатика (квалификация бакалавр)
 
 Рабочая программа обсуждена на заседании кафедры информатики, математического и компьютерного моделирования «16» мая 2013 г.
 
-Заведующий кафедрой \underline{\hspace{3cm}}~А.~Ю.~Чеботарев
+\vskip 1cm
+\begin{tabular}{lcp{8cm}}
+Заведующий кафедрой: & \underline{\hspace{3cm}} & А.~Ю.~Чеботарев\\[1cm]
+Составитель: & \underline{\hspace{3cm}} & \CourseAuthor\\
+\end{tabular}
 
-Составитель ассистент кафедры информатики, математического и компьютерного моделирования\\
-\underline{\hspace{3cm}}~\CourseAuthor
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
 }
+
+\renewcommand{\thesection}{\Roman{section}}
+\newcommand{\CourseAnnotationSection}{\section*{\bf Аннотация}}
+\newcommand{\CourseTheorySection}{\section{\bf Структура и содержание теоретической части курса}}
+\newcommand{\CoursePracticeSection}{\section{\bf Структура и содержание практической части курса}}
+\newcommand{\CourseControlSection}{\section{\bf Контроль достижения цели курса}}
+\newcommand{\CourseWorksSection}{\section{\bf Тематика и перечень курсовых работ и рефератов}}
+\newcommand{\CourseLiteratureSection}{\section{\bf Учебно-методическое обеспечение дисциплины}}
+
+\newcommand{\CourseGoal}{{\bf Цель:}}
+\newcommand{\CourseTasks}{{\bf Задачи:}}
+

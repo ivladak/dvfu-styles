@@ -1,0 +1,103 @@
+\ProvidesPackage{dvfu}
+\usepackage[margin=1cm,left=3cm,a4paper]{geometry}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage{multicol}
+%\usepackage{ifmtarg}
+
+\newcommand{\CourseName}{}
+\newcommand{\CourseAuthor}{}
+\newcommand{\CourseYear}{}
+\newcommand{\CourseSemester}{}
+\newcommand{\CourseLectures}{}
+\newcommand{\CoursePractice}{}
+\newcommand{\CourseSeminars}{}
+\newcommand{\CourseLabs}{}
+\newcommand{\CourseConsult}{}
+\newcommand{\CourseTotalAuditory}{}
+\newcommand{\CourseHomework}{}
+
+\newcommand{\CourseReferatsNumber}{}
+\newcommand{\CourseWorksNumber}{}
+
+\newcommand{\CoursePassfailSemester}{}
+\newcommand{\CourseExamSemester}{}
+
+\newcommand{\MaybeHours}[1]{\if\relax#1\relax\else#1~(час.)\fi}
+
+\newcommand{\CoursePlanTitlePage} {
+\begin{center}
+\includegraphics{dvfu.jpg}\\
+МИНИСТЕРСТВО ОБРАЗОВАНИЯ И НАУКИ РОССИЙСКОЙ ФЕДЕРАЦИИ\\
+Федеральное государственное автономное образовательное учреждение\\
+высшего профессионального образования\\
+{\bf «Дальневосточный федеральный университет»}\\
+(ДВФУ)\\
+\vskip\medskipamount
+\leaders\vrule width \textwidth\vskip2pt
+\vskip 1pt
+\leaders\vrule width \textwidth\vskip0.5pt
+\vskip\medskipamount\nointerlineskip
+{\bf ШКОЛА ЕСТЕСТВЕННЫХ НАУК ДВФУ}\\
+\end{center}
+\vskip 1cm
+\begin{multicols}{2}
+\noindent
+Согласовано\\
+\noindent
+Руководитель ОП\\
+\vskip 1cm \noindent
+\underline{\hspace{3cm}} М.~А.~Гузев\\
+«\underline{\hspace{1cm}}» 20\underline{\hspace{1cm}}~г.\\
+\columnbreak
+
+\noindent
+«УТВЕРЖДАЮ» \\
+\noindent
+Заведующий кафедрой информатики,\\
+матем. и компьютерного моделирования\\
+\vskip 1cm \noindent
+\underline{\hspace{3cm}} А.~Ю.~Чеботарев\\
+«16» мая 2013~г.\\
+\end{multicols}
+
+\vskip 1cm
+\begin{center}
+{\bf РАБОЧАЯ ПРОГРАММА УЧЕБНОЙ ДИСЦИПЛИНЫ} (РПУД)\\
+\CourseName
+\end{center}
+\vskip 1cm
+
+\noindent
+{\it 010400.62 Прикладная математика и информатика          Форма подготовки очная}\\
+Школа естественных наук ДВФУ\\
+Кафедра информатики, математического и компьютерного моделирования\\
+Курс \CourseYear\ семестр \CourseSemester \\
+\begin{tabular}{ll}
+лекции & \MaybeHours{\CourseLectures}\\
+практические занятия & \MaybeHours{\CoursePractice}\\
+семинарские занятия & \MaybeHours{\CourseSeminars}\\
+лабораторные работы & \MaybeHours{\CourseLabs}\\
+консультации & \MaybeHours{\CourseConsult}\\
+всего часов аудиторной нагрузки & \MaybeHours{\CourseTotalAuditory}\\
+самостоятельная работа & \MaybeHours{\CourseHomework}\\
+реферативные работы & \CourseReferatsNumber\\
+контрольные работы & \CourseWorksNumber\\
+\end{tabular}
+
+зачет\if\relax\CoursePassfailSemester\relax\else : \CoursePassfailSemester семестр\fi\\
+
+экзамен \if\relax\CourseExamSemester\relax\else : \CourseExamSemester семестр\fi\\
+
+Рабочая программа составлена в соответствии с требованиями федерального государственного образовательного стандарта высшего профессионального образования
+от 20 мая 2010 г. № 545 «Об утверждении и введении в действие ФГОС ВПО по направлению 010400 Прикладная математика и информатика (квалификация бакалавр)
+
+Рабочая программа обсуждена на заседании кафедры информатики, математического и компьютерного моделирования «16» мая 2013 г.
+
+Заведующий кафедрой \underline{\hspace{3cm}}~А.~Ю.~Чеботарев
+
+Составитель ассистент кафедры информатики, математического и компьютерного моделирования\\
+\underline{\hspace{3cm}}~\CourseAuthor
+}

@@ -285,20 +285,21 @@
 %\end{itemize}
 %}
 
-\newtotcounter{AuditoryHours}
-\newtotcounter{HomeworkHours}
-
-\renewcommand{\thesubsection}{Раздел \arabic{subsection}.}
 \newcommand{\CourseSection}[1] {
-\subsection[#1]{#1 (\total{AuditoryHours}/\total{HomeworkHours} час.)}
-\setcounter{AuditoryHours}{0}
-\setcounter{HomeworkHours}{0}
+\edef\AuditoryHours{AuditoryHours@\roman{subsection}}
+\edef\AuditoryMakeTot{\noexpand\newtotcounter{\AuditoryHours}}
+\AuditoryMakeTot
+\edef\DistanceHours{DistanceHours@\roman{subsection}}
+\edef\DistanceMakeTot{\noexpand\newtotcounter{\DistanceHours}}
+\DistanceMakeTot
+\renewcommand{\thesubsection}{Раздел \arabic{subsection}.}
+\subsection[#1]{#1 (\total{\AuditoryHours}/\total{\DistanceHours} час.)} %
 }
 
-\renewcommand{\thesubsubsection}{Тема \arabic{subsection}.\arabic{subsubsection}.}
 \newcommand{\CourseTopic}[3] {
+\renewcommand{\thesubsubsection}{Тема \arabic{subsection}.\arabic{subsubsection}.}
 \subsubsection[#1]{#1 (#2/#3 час.)}
-\addtocounter{AuditoryHours}{#2}
-\addtocounter{HomeworkHours}{#3}
+\addtocounter{\AuditoryHours}{#2}
+\addtocounter{\DistanceHours}{#3}
 }
 

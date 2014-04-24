@@ -152,7 +152,7 @@
 \setcounter{page}{1}
 }
 
-\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesection}{\Roman{section}.}
 \newcommand{\CourseAnnotationSection}{\section*{\bf \centering Аннотация}}
 \newcommand\CommonSection[1]{\section[#1]{\bf \centering #1}}
 \newcommand{\CourseTheorySection}{\CommonSection{Структура и содержание теоретической части курса}}
@@ -329,3 +329,9 @@
 {\setcounter{CourseMarkPoints}{0}\begin{itemize}}
 {\CourseMarkCriterium{\number\value{CourseMarkPoints}}{Итого}\end{itemize}}
 
+\newenvironment{CourseControlQuestions}[1] {
+\renewcommand\thesubsection{}
+\subsection{Вопросы к #1}
+\begin{itemize}
+}
+{\end{itemize}}

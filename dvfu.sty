@@ -155,7 +155,7 @@
 \renewcommand{\thesection}{\Roman{section}}
 \newcommand{\CourseAnnotationSection}{\section*{\bf Аннотация}}
 \newcommand{\CourseTheorySection}{\section{\bf Структура и содержание теоретической части курса}}
-\newcommand{\CoursePracticeSection}{\section{\bf Структура и содержание практической части курса}}
+%CoursePracticeSection
 \newcommand{\CourseControlSection}{\section{\bf Контроль достижения цели курса}}
 \newcommand{\CourseWorksSection}{\section{\bf Тематика и перечень курсовых работ и рефератов}}
 \newcommand{\CourseLiteratureSection}{\section{\bf Учебно-методическое обеспечение дисциплины}}
@@ -301,5 +301,21 @@
 \subsubsection[#1]{#1 (#2/#3 час.)}
 \addtocounter{\AuditoryHours}{#2}
 \addtocounter{\DistanceHours}{#3}
+}
+
+\newtotcounter{PracticeAuditoryHours}
+\newtotcounter{PracticeDistanceHours}
+\newcommand{\CoursePracticeSection}{
+\section{\bf Структура и содержание практической части курса}
+\renewcommand{\thesubsection}{}
+\subsection[Практические занятия/лабораторные работы]{Практические занятия/лабораторные работы
+(\total{PracticeAuditoryHours}/\total{PracticeDistanceHours} час.)} %
+}
+
+\newcommand{\CoursePracticeTopic}[3] {
+\renewcommand{\thesubsubsection}{Занятие \arabic{subsubsection}.}
+\subsubsection[#1]{#1 (#2/#3 час.)}
+\addtocounter{PracticeAuditoryHours}{#2}
+\addtocounter{PracticeDistanceHours}{#3}
 }
 

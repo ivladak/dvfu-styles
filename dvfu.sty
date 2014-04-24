@@ -153,12 +153,13 @@
 }
 
 \renewcommand{\thesection}{\Roman{section}}
-\newcommand{\CourseAnnotationSection}{\section*{\bf Аннотация}}
-\newcommand{\CourseTheorySection}{\section{\bf Структура и содержание теоретической части курса}}
+\newcommand{\CourseAnnotationSection}{\section*{\bf \centering Аннотация}}
+\newcommand\CommonSection[1]{\section[#1]{\bf \centering #1}}
+\newcommand{\CourseTheorySection}{\CommonSection{Структура и содержание теоретической части курса}}
 %CoursePracticeSection
-\newcommand{\CourseControlSection}{\section{\bf Контроль достижения цели курса}}
-\newcommand{\CourseWorksSection}{\section{\bf Тематика и перечень курсовых работ и рефератов}}
-\newcommand{\CourseLiteratureSection}{\section{\bf Учебно-методическое обеспечение дисциплины}}
+\newcommand{\CourseControlSection}{\CommonSection{Контроль достижения целей курса}}
+\newcommand{\CourseWorksSection}{\CommonSection{Тематика и перечень курсовых работ и рефератов}}
+\newcommand{\CourseLiteratureSection}{\CommonSection{Учебно-методическое обеспечение дисциплины}}
 
 \newcommand{\CourseGoal}{{\bf Цель:}}
 \newcommand{\CourseTasks}{{\bf Задачи:}}

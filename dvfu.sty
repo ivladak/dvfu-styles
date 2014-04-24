@@ -319,3 +319,12 @@
 \addtocounter{PracticeDistanceHours}{#3}
 }
 
+% n балл балла баллов, 0 < n < 21
+\newcommand\NumWord[4]{#1~\ifcase#1\relax#4\or#2\or#3\or#3\or#3\else#4\fi}
+\newcounter{CourseMarkPoints}
+\newcommand\CourseMarkCriterium[2]{\item #2 \NumWord{#1}{балл}{балла}{баллов}.%
+\addtocounter{CourseMarkPoints}{#1}}
+\newenvironment{CourseMarkCriteria}%
+{\setcounter{CourseMarkPoints}{0}\begin{itemize}}
+{\CourseMarkCriterium{\number\value{CourseMarkPoints}}{Итого}\end{itemize}}
+

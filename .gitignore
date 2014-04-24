@@ -3,3 +3,7 @@
 *.log
 *.doc
 *.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml

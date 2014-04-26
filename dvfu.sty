@@ -1,7 +1,7 @@
 \ProvidesPackage{dvfu}
 \usepackage[margin=2cm,left=3cm,a4paper]{geometry}
 \usepackage[T1,T2A]{fontenc}
-\usepackage[russian]{babel}
+\usepackage[english,russian]{babel}
 \usepackage{ifluatex}
 \ifluatex
 \usepackage{fontspec}
@@ -9,7 +9,7 @@
 \else
 \usepackage[utf8]{inputenc}
 \fi
-\usepackage[backend=biber,style=gost-authoryear]{biblatex}
+\usepackage[backend=biber,defernumbers=true,style=gost-numeric,babel=other]{biblatex}
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{totcount}
@@ -160,7 +160,12 @@
 %CoursePracticeSection
 \newcommand{\CourseControlSection}{\CommonSection{Контроль достижения целей курса}}
 \newcommand{\CourseWorksSection}{\CommonSection{Тематика и перечень курсовых работ и рефератов}}
-\newcommand{\CourseLiteratureSection}{\CommonSection{Учебно-методическое обеспечение дисциплины}}
+\newcommand{\CourseLiteratureSection}{
+\CommonSection{Учебно-методическое обеспечение дисциплины}
+\nocite{*}
+\printbibliography[title={Основная литература},keyword=basic]
+\printbibliography[title={Дополнительная литература},keyword=additional]
+}
 
 \newcommand{\CourseGoal}{{\bf Цель:}}
 \newcommand{\CourseTasks}{{\bf Задачи:}}

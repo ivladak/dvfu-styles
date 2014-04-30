@@ -4,12 +4,18 @@
 \usepackage[english,russian]{babel}
 \usepackage{ifluatex}
 \ifluatex
-\usepackage{fontspec}
-\setmainfont{Times New Roman}
+  \usepackage{fontspec}
+  \setmainfont{Times New Roman}
 \else
-\usepackage[utf8]{inputenc}
+  \usepackage[utf8]{inputenc}
 \fi
-\usepackage[backend=biber,defernumbers=true,style=gost-numeric,babel=other]{biblatex}
+\usepackage[
+  backend=biber,
+  defernumbers=true,
+  style=gost-numeric,
+  sorting=none,
+  babel=other
+]{biblatex}
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{totcount}

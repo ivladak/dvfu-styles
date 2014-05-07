@@ -159,9 +159,11 @@
 \setcounter{page}{1}
 }
 
+\ifluatex\def\maybesc#1{\uppercase{#1}}\else\def\maybesc#1{\textsc{#1}}\fi
+
 \renewcommand{\thesection}{\Roman{section}.}
-\newcommand{\CourseAnnotationSection}{\section*{\bf \centering Аннотация}}
-\newcommand\CommonSection[1]{\section[#1]{\bf \centering #1}}
+\newcommand{\CourseAnnotationSection}{\section*{\centering \maybesc{Аннотация}}}
+\newcommand\CommonSection[1]{\section[#1]{\centering \maybesc{#1}}}
 \newcommand{\CourseTheorySection}{\CommonSection{Структура и содержание теоретической части курса}}
 %CoursePracticeSection
 \newcommand{\CourseControlSection}{\CommonSection{Контроль достижения целей курса}}
@@ -319,7 +321,7 @@
 \newtotcounter{PracticeAuditoryHours}
 \newtotcounter{PracticeDistanceHours}
 \newcommand{\CoursePracticeSection}{
-\section{\bf Структура и содержание практической части курса}
+\CommonSection{Структура и содержание практической части курса}
 \renewcommand{\thesubsection}{}
 \subsection[Практические занятия/лабораторные работы]{Практические занятия/лабораторные работы
 (\total{PracticeAuditoryHours}/\total{PracticeDistanceHours} час.)} %

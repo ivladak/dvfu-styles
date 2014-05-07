@@ -2,6 +2,7 @@
 \usepackage[margin=2cm,left=3cm,a4paper]{geometry}
 \usepackage[T1,T2A]{fontenc}
 \usepackage[english,russian]{babel}
+\usepackage{indentfirst}
 \usepackage{ifluatex}
 \ifluatex
   \usepackage{fontspec}
@@ -14,7 +15,7 @@
   defernumbers=true,
   style=gost-numeric,
   sorting=none,
-  babel=other
+  autolang=other
 ]{biblatex}
 \usepackage{graphicx}
 \usepackage{multicol}
@@ -34,8 +35,8 @@
 \newcommand{\CourseTotalAuditory}{}
 \newcommand{\CourseHomework}{}
 
-\newcommand{\CourseReferatsNumber}{}
-\newcommand{\CourseWorksNumber}{}
+\newcommand{\CourseReferatsNumber}{не предусмотрены}
+\newcommand{\CourseWorksNumber}{не предусмотрены}
 
 \newcommand{\CoursePassfailSemester}{}
 \newcommand{\CourseExamSemester}{}
@@ -62,9 +63,10 @@
 \vskip 1cm
 \begin{multicols}{2}
 \noindent
-Согласовано\\
+\raggedright Согласовано\\
 \noindent
 Руководитель ОП\\
+\ \\
 \vskip 1cm \noindent
 \Field{3cm} М.~А.~Гузев\\
 \DateField\\
@@ -73,8 +75,8 @@
 \noindent
 «УТВЕРЖДАЮ» \\
 \noindent
-Заведующий кафедрой информатики,\\
-матем. и компьютерного моделирования\\
+\raggedright Заведующий кафедрой информатики,\\
+\raggedright матем. и компьютерного моделирования\\
 \vskip 1cm \noindent
 \Field{3cm} А.~Ю.~Чеботарев\\
 «16» мая 2013~г.\\
@@ -88,7 +90,7 @@
 \vskip 1cm
 
 \noindent
-{\it 010400.62 Прикладная математика и информатика          Форма подготовки очная}\\
+{\it 010400.62 Прикладная математика и информатика Форма подготовки очная}\\
 Школа естественных наук ДВФУ\\
 Кафедра информатики, математического и компьютерного моделирования\\
 Курс \CourseYear\ семестр \CourseSemester \\
@@ -112,7 +114,7 @@
 Рабочая программа обсуждена на заседании кафедры информатики, математического и компьютерного моделирования «16» мая 2013 г.
 
 \vskip 1cm
-\begin{tabular}{lcp{8cm}}
+\begin{tabular}{lcp{7.3cm}}
 Заведующий кафедрой: & \Field{3cm} & А.~Ю.~Чеботарев\\[1cm]
 Составитель: & \Field{3cm} & \CourseAuthor\\
 \end{tabular}
